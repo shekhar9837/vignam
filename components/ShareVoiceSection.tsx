@@ -46,7 +46,7 @@ const ShareVoiceSection = () => {
         ))}
       </div>
 
-      <div className="relative flex items-center justify-center pt-28 mb-44 sm:pt-16 md:pt-20 lg:pt-24">
+      <div className="relative flex items-center justify-center pt-28 md:mb-0 mb-44 sm:pt-16 md:pt-20 lg:pt-24">
         <div className="absolute ">
           {/* <div className="  bg-red  w-[28rem] h-fit "> */}
 
