@@ -35,8 +35,8 @@ const Features = () => {
       <div className="relative flex w-full gap-4 overflow-x-scroll scrollbar-thin px-4 pb-4 pt-3 xl:ps-0 xl:pt-4">
         
 
-       {featureData.map( item =>(
-           <div className="min-w-72 max-w-fit select-none md:min-w-80 ">
+       {featureData.map(( item, i) =>(
+           <div key={i} className="min-w-72 max-w-fit select-none md:min-w-80 ">
          <Image
            src={item.image}
            alt={item.alt}

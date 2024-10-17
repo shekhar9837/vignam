@@ -62,15 +62,15 @@ const AllSolution = () => {
             <Tabs defaultValue={activeTab} onValueChange={setActiveTab} className="bg-white rounded-none">
               <TabsList className='bg-slate-100 rounded-2xl h-fit p-2'>
                 {tabData.map((tab, index) => (
-                  <TabsTrigger key={index} value={tab.value} className='rounded-2xl py-4 px-12 text-lg'>
+                  <TabsTrigger key={index} value={tab.value} className='rounded-2xl py-4 md:px-12 text-lg'>
                     {tab.label}
                   </TabsTrigger>
                 ))}
               </TabsList>
 
               {tabData.map((tab, index) => (
-                <TabsContent key={index} value={tab.value} className='flex flex-row '>
-                  <div className='w-1/2'>
+                <TabsContent key={index} value={tab.value} className='flex md:flex-row flex-col '>
+                  <div className='md:w-1/2'>
 
                   <p className="text-neutral-700 mb-4 mt-12">{tab.des}</p>
                   <ul className="list-disc pl-5 mt-12">
@@ -81,7 +81,7 @@ const AllSolution = () => {
                     ))}
                   </ul>
                     </div>
-                  <div className='w-1/2 flex justify-end'>
+                  <div className='md:w-1/2 flex justify-center md:justify-end'>
                     <Image
                       src={tab.image}
                       alt={tab.label} // Use tab label as alt text for better accessibility

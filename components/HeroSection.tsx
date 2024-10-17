@@ -5,7 +5,7 @@ import TweetsSVG from "./TweetsSVG";
 
 const HeroSection = () => {
   return (
-    <div className="mx-auto mt-8 flex w-full max-w-6xl flex-col gap-8 px-4 py-7 text-center md:mt-0 md:py-28 xl:pe-4 xl:ps-0">
+    <div className="mx-auto mt-20 flex w-full max-w-6xl flex-col gap-8 px-4 py-7 text-center md:mt-0 md:py-28 xl:pe-4 xl:ps-0">
       <div className="mx-auto w-full max-w-5xl text-balance px-8 text-center text-[30px] font-bold leading-[32px] tracking-[-1.4px] text-[#252424] md:px-0 md:text-[80px] md:leading-[80px]">
         Convert
         <div className="relative inline-block mx-2 ">Tweets

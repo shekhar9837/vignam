@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image';
-import React, { useRef } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 
 const WorkingSection = () => {
@@ -30,30 +30,54 @@ const WorkingSection = () => {
   ];
 
   // Function to handle mouse movement
-  const handleMouseMove = (event:any) => {
-    const card = event.currentTarget;
-    const { left, top, width, height } = card.getBoundingClientRect();
-    const x = event.clientX - left; // X position relative to card
-    const y = event.clientY - top; // Y position relative to card
-    const xPercent = x / width; // Normalized X position
-    const yPercent = y / height; // Normalized Y position
 
-    // Calculate rotation based on mouse position
-    const rotateY = (xPercent - 0.5) * 30; // Rotate up to 30 degrees
-    const rotateX = (0.5 - yPercent) * 30; // Rotate up to 30 degrees
 
-    // Apply transformation
-    card.style.transform = ` rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-  };
+const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
+  const card = event.currentTarget;
+  const { left, top, width, height } = card.getBoundingClientRect();
+  const x = event.clientX - left; // X position relative to card
+  const y = event.clientY - top; // Y position relative to card
+  const xPercent = x / width; // Normalized X position
+  const yPercent = y / height; // Normalized Y position
+
+  // Calculate rotation based on mouse position
+  const rotateY = (xPercent - 0.5) * 30; // Rotate up to 30 degrees
+  const rotateX = (0.5 - yPercent) * 30; // Rotate up to 30 degrees
+
+  // Apply transformation
+  card.style.transform = ` rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+};
+
+// Reset card rotation on mouse leave
+const handleMouseLeave = (event: React.MouseEvent<HTMLDivElement>) => {
+  const card = event.currentTarget;
+  card.style.transform = 'rotateY(0deg) rotateX(0deg)';
+};
+  //   const handleMouseMove = (event:any) => {
+  //   const card = event.currentTarget;
+  //   const { left, top, width, height } = card.getBoundingClientRect();
+  //   const x = event.clientX - left; // X position relative to card
+  //   const y = event.clientY - top; // Y position relative to card
+  //   const xPercent = x / width; // Normalized X position
+  //   const yPercent = y / height; // Normalized Y position
+
+  //   // Calculate rotation based on mouse position
+  //   const rotateY = (xPercent - 0.5) * 30; // Rotate up to 30 degrees
+  //   const rotateX = (0.5 - yPercent) * 30; // Rotate up to 30 degrees
+
+  //   // Apply transformation
+  //   card.style.transform = ` rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  // };
 
   // Reset card rotation on mouse leave
-  const handleMouseLeave = (event:any) => {
-    const card = event.currentTarget;
-    card.style.transform = 'rotateY(0deg) rotateX(0deg)';
-  };
+
+  // const handleMouseLeave = (event:any) => {
+  //   const card = event.currentTarget;
+  //   card.style.transform = 'rotateY(0deg) rotateX(0deg)';
+  // };
 
   return (
-    <section className="mx-auto flex h-fit w-full max-w-6xl flex-col gap-3.5 py-12 md:gap-8 md:py-24">
+    <section className="mx-auto mt-20 flex h-fit w-full max-w-6xl flex-col gap-3.5 py-12 md:gap-8 md:py-24">
       <h3 className="px-4 text-2xl font-medium xl:pe-4 xl:ps-0 tracking-[-0.2px] text-neutral-800 md:text-[40px] md:leading-[42px] md:tracking-[-1px]">How it works?</h3>
       <div className="flex gap-4 overflow-y-visible overflow-x-scroll px-4 pb-4 md:overflow-x-visible lg:pb-4 lg:pe-4 lg:ps-0">
         {workingData.map((item, index) => (
